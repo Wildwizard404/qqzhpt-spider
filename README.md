@@ -9,13 +9,13 @@
 
 ## 使用前准备
 
-1. clone代码到本地
-2. 安装依赖
-	>pip install requests
-	>pip install beautifulsoup4
-	>pip install lxml
-3. 访问网站，寻找自己要下载的图集（你不可能打算下载整个站点吧？）
-4. 记录这些图集第一页的url
+1. clone代码到本地  
+2. 安装依赖  
+	>pip install requests   
+	>pip install beautifulsoup4   
+	>pip install lxml   
+3. 访问网站，寻找自己要下载的图集（你不可能打算下载整个站点吧？）  
+4. 记录这些图集第一页的url  
 
 ## 使用
 main.py提供了一个示例，直接运行代码并输入url即可下载该图集。同时可以使用命令行调用：`python main.py url`。  
