@@ -1,24 +1,31 @@
 # qqzhpt-spider
- 情趣综合平台 美图爬虫/批量下载   
-不知道为啥这网站名这么色情，但是照片都是没有露点的正经照片（参考附带照片）   
-url: http://www.qqzhpt.com/meitu/  
+## 情趣综合平台 美图爬虫/批量下载  
+虽然站点的title异常涩情，但其实只是一个普通的写真网站。
+[url:http://www.qqzhpt.com/meitu/](http://www.qqzhpt.com/meitu/)  
 由于众所周知的原因，部分地区可能无法访问网站，请自行解决。   
-图片版权归原网站/原作者所有，请注意使用。   
+图片版权归原网站/原作者所有，使用时请注意。   
+本项目收录在[awesome-spider](https://github.com/facert/awesome-spider)。  
+详细内容发布在[野生巫师页 https://wildwizard.cn/2019/11/09/get_images_from_qqzhpt/]( https://wildwizard.cn/2019/11/09/get_images_from_qqzhpt/)  
 
-## 2019年11月8日
-准备重构中，计划输入网址后自动检测图片数量和图片地址。
+## 使用前准备
 
-## 批量下载图集
-### main.py(不推荐) 
-请先获得图集的地址，例如：http://www.qqzhpt.com/meitu/detail/1562014808513 ，并修改代码`if __name__=='__main__':`中的地址和页面范围。   
-我已经好久没用这个工具了，可能是需要自己建立目标文件夹吧……    
-### direct.py
-上面那个过于迂回，不如直接翻到图集的最后一页，在最后一张照片上查看元素，获得图片的地址，例如http://img.qqzhpt.com/meitustatic/images/img/18248/10.jpg ，正巧这个网站没有验证也不反爬虫。   
-由上面的地址可知这个图集编号是18248，共10张。修改代码`if __name__=='__main__':`中的地址和图片数量进行下载。同一时间只下载一张图片。  
-### direct2.py
-试着用了aria2，使用方式同上。   
-### direct3.py（不推荐）
-试着用了aria2和多线程，下载确实快但是由于没有限制并发数量，约5%的图片不完整，有待修改。   
-### 以上代码有待改进。
-## 自动爬取整个网站图集
-有心情再写吧……
+1. clone代码到本地
+2. 安装依赖
+	>pip install requests
+	>pip install beautifulsoup4
+	>pip install lxml
+3. 访问网站，寻找自己要下载的图集（你不可能打算下载整个站点吧？）
+4. 记录这些图集第一页的url
+
+## 使用
+main.py提供了一个示例，直接运行代码并输入url即可下载该图集。同时可以使用命令行调用：`python main.py url`。  
+如果有多条url，可以自己利用qqzhpt.py编写脚本。调用方式为：  
+```python
+import qqzhpt
+if __name__ == '__main__' :
+    mission = qqzhpt.meitu("url")
+    mission.run()
+```
+## 注意
+仅为下载方便而编写的脚本，完全没有考虑任何异常处理。请严格按照使用方法调用，避免传入错误的url。  
+相关内容可于[https://wildwizard.cn/2019/11/09/get_images_from_qqzhpt/](https://wildwizard.cn/2019/11/09/get_images_from_qqzhpt/)查看。
