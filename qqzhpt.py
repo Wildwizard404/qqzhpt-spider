@@ -6,7 +6,7 @@ class meitu(object):
     def __init__(self,url):
         self.url = url
         self.urls = []
-        self.dir = url.split('/')[-1]+'/'
+        self.dir = url.split('/')[5]+'/'
         if os.path.exists(self.dir) == False:
             os.mkdir(self.dir)
         self.locks = []
