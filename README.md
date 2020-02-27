@@ -1,4 +1,7 @@
 # qqzhpt-spider
+## 重要！！
+qqzhpt已经无法访问，本项目因此无法继续使用，仅供学习参考。
+
 ## 情趣综合平台 美图爬虫/批量下载  
 虽然站点的title异常涩情，但其实只是一个普通的写真网站。
 [url:http://www.qqzhpt.com/meitu/](http://www.qqzhpt.com/meitu/)  
